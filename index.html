@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrés ADS | Trafficker Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+  <div class="contenedor">
+
+    <header class="encabezado">
+      <img src="imagenes/logo.png" alt="Logo Andrés ADS" class="logo" />
+      <h1 class="titulo" data-aos="flip-right">TRAFFICKER <span>DIGITAL</span></h1>
+      <aside class="experiencia">Especialista en ventas y publicidad digital con 14 años de experiencia en consumo masivo</aside>
+    </header>
+
+    <nav class="menu-horizontal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#optimizacion">Optimización</a>
+      <a href="#contenido">Contenido</a>
+      <a href="#campañas">Campañas</a>
+      <a href="#beneficios">¿Por qué trabajar conmigo?</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <video src="videos/mano.mp4" class="videoMano" autoplay muted loop></video>
+
+    <!-- MENÚ VERTICAL REDES -->
+    <nav class="menu-vertical">
+      <a href="https://www.facebook.com/profile.php?id=61562900953749" target="_blank">
+        <img src="imagenes/fb.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/andresmarquezdigital/" target="_blank">
+        <img src="imagenes/ig.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/573173932446" target="_blank">
+        <img src="imagenes/ws.png" alt="WhatsApp">
+      </a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+
+    <section  id="sobre-mi" 
+              class="sobre-mi" 
+              data-aos="fade-up" 
+              data-aos-duration="1500" 
+              aria-labelledby="titulo-sobre-mi">
+
+  <h2>Especialista en comunicación visual y publicidad digital</h2>
+  <p>
+    Ayudo al <strong>crecimiento de las marcas</strong>, aumentando el <strong>engagement</strong> de tus clientes potenciales a través de:
+  </p>
+  <ul>
+    <li>Diseño de logo y definición de paleta de colores alineados a tu producto o servicio.</li>
+    <li>Creación y publicación de contenido con coherencia visual.</li>
+    <li>Administración de campañas publicitarias con enfoque estratégico.</li>
+  </ul>
+</section>
+
+
+    <!-- ---------- GRID SERVICIOS (tarjetas flip) ---------- -->
+    <section class="grid-servicios">
+
+      <!-- TARJETA 1 -->
+      <section  class="tarjeta-flip servicio" 
+                id="optimizacion" 
+                data-aos="zoom-in"
+                aria-labelledby="titulo-optimizacion">
+
+        <div class="tarjeta-flip-inner">
+          <!-- Frente: imagen arriba + título abajo (TODO gira junto) -->
+          <div class="tarjeta-flip-front" id="optimizacion-front">
+            <div class="media-wrap">
+              <img src="imagenes/fondo1.png" alt="Optimización de Redes Sociales">
+            </div>
+            <!-- El título ahora sirve también de referencia para aria-labelledby -->
+            <h3 class="titulo-servicio" id="titulo-optimizacion">
+              Optimización de Redes Sociales
+            </h3>
+          </div>
+
+          <!-- Reverso -->
+          <div class="tarjeta-flip-back">
+            <h3 class="titulo-servicio back-title">Optimización de Redes Sociales</h3>
+            <p>Perfil profesional en Instagram y Facebook, conexión de WhatsApp Business, 
+              portadas, biografía estratégica y presencia coherente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TARJETA 2 -->
+      <section  class="tarjeta-flip servicio" 
+                id="contenido" 
+                data-aos="zoom-out"
+                aria-labelledby="titulo-contenido">
+
+        <div class="tarjeta-flip-inner">
+          <!-- Frente -->
+          <div class="tarjeta-flip-front" id="contenido-front">
+            <div class="media-wrap">
+              <img src="imagenes/fondo2.png" alt="Generación de Contenido">
+            </div>
+            <!-- El título sirve de referencia para aria-labelledby -->
+            <h3 class="titulo-servicio" id="titulo-contenido">
+              Generación de Contenido
+            </h3>
+          </div>
+            <!-- Reverso -->
+          <div class="tarjeta-flip-back">
+            <h3 class="titulo-servicio back-title">
+              Generación de Contenido
+            </h3>
+            <p>Diseño de piezas para post, stories y reels. 
+              Textos persuasivos con enfoque en ventas y posicionamiento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TARJETA 3 -->
+      <section  class="tarjeta-flip servicio" 
+                id="campañas" 
+                data-aos="flip-left"
+                aria-labelledby="titulo-campanas">
+
+        <div class="tarjeta-flip-inner">
+          <!-- Frente -->
+          <div class="tarjeta-flip-front" id="campanas-front">
+            <div class="media-wrap">
+              <img src="imagenes/fondo3.png" alt="Administración de Campañas">
+            </div>
+            <!-- El título sirve de referencia para aria-labelledby -->
+            <h3 class="titulo-servicio" id="titulo-campanas">
+              Administración de Campañas
+            </h3>
+          </div>
+
+            <!-- Reverso -->
+          <div class="tarjeta-flip-back">
+            <h3 class="titulo-servicio back-title">Administración de Campañas</h3>
+            <p>Configuración en Meta Ads, segmentación avanzada, estructura estratégica, 
+              reportes de rendimiento y optimización.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+    <!-- ---------- FIN GRID SERVICIOS ---------- -->
+
+    <section  id="beneficios" 
+              class="tarjeta servicio" 
+              data-aos="fade-down"
+              aria-labelledby="titulo-beneficios">
+
+      <!-- El título sirve de referencia para aria-labelledby -->        
+      <h3 id="titulo-beneficios">¿Por qué trabajar conmigo?</h3>
+
+      <ul class="lista-ventajas">
+        <li> Atención personalizada según el tipo de negocio.</li>
+        <li> Estrategias que conectan con el cliente ideal.</li>
+        <li> Acompañamiento y reportes para decisiones inteligentes.</li>
+      </ul>
+    </section>
+
+    <section  id="contacto" 
+              class="tarjeta" 
+              data-aos="flip-right">
+      <h2>¿Quieres ser contactado?</h2>
+      <form class="formulario" 
+      onsubmit="return validarFormulario()" 
+      aria-label="Formulario de contacto">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="motivo">Motivo de la consulta:</label>
+        <textarea id="motivo" name="motivo" rows="4" cols="40"></textarea>
+
+        <label for="imagen">Imagen de Tus Redes</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" onchange="mostrarImagen(event)">
+        <img id="ver-imagen" class="ver-imagen">
+
+        <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+      </form>
+    </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Andrés ADS — Trafficker Digital</p>
+    </footer>
+
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Script local -->
+  <script src="script.js"></script>
+</body>
+</html>

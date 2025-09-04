@@ -1,0 +1,272 @@
+/* ---------------- variables ---------------- */
+:root{
+  --azul: #348fda;
+  --azul-oscuro: #1a3f73;
+  --cian: #5bd8ff;
+  --blanco: #ffffff;
+  --gris-claro: #f7f9fc;
+  --negro: #111111;
+  --fuente-principal: 'Montserrat', sans-serif;
+  --fuente-titulos: 'Glacial Indifference', sans-serif;
+  --fuente-secundaria: 'Oswald', sans-serif;
+}
+
+/* ---------------- base ---------------- */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--fuente-principal);
+  background: linear-gradient(to bottom,#ffffff,#f3f6fb);
+  color:var(--negro);
+  line-height:1.6;
+}
+
+.contenedor{
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px;
+}
+
+/* ---------- encabezado ---------- */
+.encabezado{ text-align:center; margin-bottom:40px; }
+.logo{ max-width:160px; display:block; margin:0 auto 8px; }
+.titulo{ font-family:var(--fuente-titulos); font-size:48px; margin:10px 0 5px; opacity:1; }
+.titulo span{ font-family:var(--fuente-secundaria); color:var(--azul); }
+
+/*subtítulo aside*/
+.experiencia{ font-family:var(--fuente-secundaria); 
+font-size:20px; 
+color:#333;
+font-style: italic;
+display: inline-block;   /*  Permite aplicar transformaciones como scale() o rotate() */
+animation: resaltar 5s infinite;   /*  Aplica la animación llamada "resaltar" cada 5 segundos, repitiéndose para siempre */
+
+}
+@keyframes resaltar {
+  0%, 90%, 100% { 
+    transform: scale(1);  /* El texto está en su tamaño normal */
+    opacity: 1;
+  }
+  95% { 
+    transform: scale(1.08) rotate(-2deg);  /*  Se agranda un poquito (8%) y se inclina levemente */
+    opacity: 0.9;  /*  Baja apenas la opacidad para dar efecto de golpe leve y regresa a su tamaño */
+  }
+}
+
+/* ---------- menu horizontal ---------- */
+.menu-horizontal{
+  position:sticky; top:0; z-index:1000;
+  display:flex; justify-content:center; gap:20px;
+  background-color:var(--azul); padding:15px; border-radius:8px; flex-wrap:wrap;
+  margin-bottom:40px;
+}
+.menu-horizontal a{ color:#fff; text-decoration:none; font-weight:bold; font-size:16px; padding:8px 12px; transition:all .3s ease; }
+.menu-horizontal a:hover{ background-color:var(--cian); color:var(--negro); border-radius:5px; transform:scale(1.05); }
+
+/* ---------- video ---------- */
+.videoMano{ max-width:100%; height:auto; display:block; border-radius:8px; margin-bottom:18px; }
+
+/* ---------- tarjeta general (sobre-mi, contacto, etc) ---------- */
+.tarjeta{
+  background-color:var(--gris-claro);
+  padding:30px;
+  margin-bottom:30px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+.tarjeta h2, .tarjeta h3{ font-family:var(--fuente-titulos); color:var(--azul-oscuro); font-size:28px; margin:0 0 10px; }
+.tarjeta p{ font-size:18px; margin-top:10px; }
+
+/* ---------- grid servicios (SIEMPRE horizontal en desktop) ---------- */
+.grid-servicios{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 3 columnas si cabe; baja a 2 o 1 sin @media */
+  gap: 20px;
+  margin-bottom: 40px;
+  overflow: visible; /* que no corte el flip */
+}
+
+
+/* Responsive para móviles y pantallas muy pequeñas */
+@media (max-width: 768px) {
+  .grid-servicios {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 20px !important;
+    width: 100%;
+  }
+
+  /* ---------- tarjetas flip ---------- */
+  .tarjeta-flip {
+    width: 100% !important;
+    max-width: 400px; /* Opcional, para no verse demasiado grande */
+  }
+}
+
+}
+.tarjeta-flip:hover{
+  transform: translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.tarjeta-flip-inner{
+  position:relative;
+  width:100%;
+  min-height:340px;
+  transition: transform .8s;
+  transform-style: preserve-3d;
+}
+.tarjeta-flip:hover .tarjeta-flip-inner{
+  transform: rotateY(180deg);
+}
+.tarjeta-flip-front,
+.tarjeta-flip-back{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.tarjeta-flip-front{
+  padding:0 16px 18px;
+  justify-content:flex-start;
+  background-color:transparent;
+}
+.media-wrap{
+  width:100%;
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #e9eef6;
+}
+.media-wrap img{
+  display:block;
+  max-width: calc(100% - 0px);
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  image-rendering:auto;
+}
+.titulo-servicio{
+  font-family:var(--fuente-titulos);
+  color:var(--azul-oscuro);
+  font-size:20px;
+  margin:14px 0 0;
+}
+.tarjeta-flip-back{
+  background-color:var(--blanco);
+  color:var(--negro);
+  padding:20px;
+  box-sizing:border-box;
+  transform: rotateY(180deg);
+  justify-content:center;
+}
+.tarjeta-flip-back .back-title{
+  color:var(--azul-oscuro);
+  margin-bottom:8px;
+}
+
+/* lista de ventajas y formularios básicos */
+.lista-ventajas{ list-style:none; padding:0; margin:0; }
+.lista-ventajas li{ position:relative; padding-left:28px; margin-bottom:15px; font-size:18px; }
+.lista-ventajas li::before{ content:'✔'; position:absolute; left:0; color:var(--azul); font-weight:bold; }
+
+.formulario{ display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
+input, textarea, button{ padding:12px; font-size:16px; border:1px solid #ccc; border-radius:6px; font-family:var(--fuente-principal); }
+button{ background-color:var(--azul); color:#fff; font-weight:bold; border:none; cursor:pointer; transition:background-color .3s ease; }
+button:hover{ background-color:var(--azul-oscuro);  }
+
+/* menu vertical */
+.menu-vertical{
+  position:fixed; top:20%; left:10px; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:15px; z-index:2000;
+}
+.menu-vertical a{ width:48px; height:48px; border-radius:8px; overflow:hidden; background-color:var(--azul); display:block; transition:transform .2s ease, background-color .2s ease; }
+.menu-vertical img{ width:100%; height:100%; object-fit:cover; }
+.menu-vertical a:hover{ transform:scale(1.08); background-color:var(--cian); }
+
+/* fade-in título */
+@keyframes fadeIn { to{ opacity:1 } }
+.titulo { opacity:0; animation: fadeIn 1.8s ease forwards; }
+
+/* -------------------- RESPONSIVE GLOBAL -------------------- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+  .contenedor {
+    padding: 15px;
+  }
+  .menu-horizontal {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+  .tarjeta-flip-inner {
+    min-height: 300px;
+  }
+  .media-wrap {
+    height: 160px;
+  }
+}
+
+.sobre-mi {
+  background: #f9fcff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.sobre-mi h2 {
+  font-size: 24px;
+  color: #163172;
+  margin-bottom: 15px;
+}
+
+.sobre-mi p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.sobre-mi ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sobre-mi ul li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sobre-mi ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #163172;
+  font-weight: bold;
+}
+
+
+footer {
+  text-align: center;         /* centra el texto */
+  padding: 20px;
+  background-color: var(--azul); /* color fondo */
+  color: var(--blanco);       /* forzar el texto a blanco */
+  border-radius: 8px; 
+
+}
+
+
+
