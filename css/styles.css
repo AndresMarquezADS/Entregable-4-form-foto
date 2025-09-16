@@ -104,7 +104,7 @@ animation: resaltar 5s infinite;   /*  Aplica la animación llamada "resaltar" c
   }
 }
 
-}
+
 .tarjeta-flip:hover{
   transform: translateY(-6px);
   box-shadow:0 10px 30px rgba(0,0,0,0.15);
@@ -258,6 +258,25 @@ button:hover{ background-color:var(--azul-oscuro);  }
   font-weight: bold;
 }
 
+.ver-imagen {
+  display: none;
+  max-width: 80%;       /* ocupa el 80% del ancho del contenedor */
+  margin: 20px auto;    /* margen automático para centrar */
+  display: block;       /* necesario para que el margin auto funcione */
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+html, body {
+  height: 100%;           /* ocupar todo el alto */
+  margin: 0;              /* quitar márgenes */
+  display: flex;
+  flex-direction: column; /* organizar en columna */
+}
+
+main {
+  flex: 1; /* el main se expande y empuja el footer abajo */
+}
 
 footer {
   text-align: center;         /* centra el texto */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Andrés ADS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <img src="imagenes/logo.png" alt="Logo Andrés ADS" class="logo" />
+      <h1 class="titulo" data-aos="flip-right">TRAFFICKER <span>DIGITAL</span></h1>
+    <nav class="menu-horizontal">
+      <a href="index.html">Inicio</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="beneficios.html">Beneficios</a>
+    </nav>
+  </header>
+
+  <main>
+      <!-- Contacto -->
+      <section id="contacto" class="tarjeta" data-aos="flip-right">
+  <h2>¿Quieres ser contactado?</h2>
+  <form class="formulario" onsubmit="return validarFormulario()" aria-label="Formulario de contacto">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="motivo">Motivo de la consulta:</label>
+    <textarea id="motivo" name="motivo" rows="4" cols="40"></textarea>
+
+    <label for="imagen">Imagen de Tus Redes</label>
+    <input type="file" id="imagen" name="imagen" accept="image/*" onchange="mostrarImagen(event)">
+
+    <!-- Vista previa -->
+    <div class="preview-container">
+      <img id="ver-imagen" class="ver-imagen" alt="Vista previa" style="display:none;">
+    </div>
+
+    <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
+  </form>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Andrés ADS</p>
+  </footer>
+
+  <!-- Librería AOS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    <!-- script -->
+  <script src="script.js"></script>
+</body>
+</html>

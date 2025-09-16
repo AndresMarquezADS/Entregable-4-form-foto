@@ -1,22 +1,28 @@
-function validarFormulario() {
-    let nombre = document.getElementById("nombre").value;
-    let email = document.getElementById("email").value;
-    let motivo = document.getElementById("motivo").value;
-    let imagen = document.getElementById("imagen").value;
+ function validarFormulario() {
+      let nombre = document.getElementById("nombre").value;
+      let email = document.getElementById("email").value;
+      let motivo = document.getElementById("motivo").value;
+      let imagen = document.getElementById("imagen").value;
 
-    if (nombre === "" || email === "" || motivo === "" || imagen === "") {
-        alert("Todos los campos son obligatorios...");
-        return false;
-    }
+      if (nombre === "" || email === "" || motivo === "" || imagen === "") {
+          alert("Todos los campos son obligatorios...");
+          return false;
+      }
+      return true;
+  }
 
-    return true;
-}
+  function mostrarImagen(event) {
+      let archivo = event.target.files[0];
+      let imgPreview = document.getElementById('ver-imagen');
 
-function mostrarImagen(event) {
-    let imagen = document.getElementById('ver-imagen');
-    imagen.src = URL.createObjectURL(event.target.files[0]);
-}
-
+      if (archivo) {
+          imgPreview.src = URL.createObjectURL(archivo);
+          imgPreview.style.display = "block";
+      } else {
+          imgPreview.src = "";
+          imgPreview.style.display = "none";
+      }
+  }
 
 
 AOS.init({
